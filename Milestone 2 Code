@@ -64,7 +64,7 @@ void setup() {
   pinMode(12, OUTPUT); //output pin
 
   HANN.attach(servoPin);
-  HANN.write(90);
+  HANN.write(45);
 
   cli();//diable interrupts
 
@@ -177,6 +177,7 @@ void loop() {
   if (checkMaxAmp > ampThreshold) {
     frequency = 38462 / float(period); //calculate frequency timer rate/period
     //print results
+    //HANN (Alone)
     Serial.print(n1);
     Serial.print(" ");
     Serial.print(n2);
@@ -230,6 +231,6 @@ void loop() {
     }
   delay(1000);  //delete this if you want
   if (n7 == true){
-    HANN.write(45);
+    HANN.write(160);
   }
 }
