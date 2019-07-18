@@ -72,7 +72,7 @@ void setup() {
   pinMode(12, OUTPUT); //output pin
 
   HANN.attach(servoPin);
-  HANN.write(105 );
+  HANN.write(105);
 
   cli();//diable interrupts
 
