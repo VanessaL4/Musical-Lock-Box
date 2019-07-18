@@ -45,7 +45,7 @@ int ledPin = 9;
 int servoPin = 3;
 Servo HANN;
 
-//Note Check
+//Note Check- HANN (Alone)
 bool n1 = false;
 bool n2 = false;
 bool n3 = false;
@@ -53,6 +53,14 @@ bool n4 = false;
 bool n5 = false;
 bool n6 = false;
 bool n7 = false;
+
+//Note Check- WangXian
+bool n11 = false;
+bool n12 = false;
+bool n13 = false;
+bool n14 = false;
+bool n15 = false;
+bool n16 = false;
 
 void setup() {
 
@@ -64,7 +72,7 @@ void setup() {
   pinMode(12, OUTPUT); //output pin
 
   HANN.attach(servoPin);
-  HANN.write(45);
+  HANN.write(105 );
 
   cli();//diable interrupts
 
@@ -178,59 +186,74 @@ void loop() {
     frequency = 38462 / float(period); //calculate frequency timer rate/period
     //print results
     //HANN (Alone)
-    Serial.print(n1);
-    Serial.print(" ");
-    Serial.print(n2);
-    Serial.print(" ");
-    Serial.print(n3);
-    Serial.print(" ");
-    Serial.print(n4);
-    Serial.print(" ");
-    Serial.print(n5);
-    Serial.print(" ");
-    Serial.print(n6);
-    Serial.print(" ");
-    Serial.print(n7);
-    Serial.print(" ");
-    Serial.print(frequency);
-    Serial.println(" hz");
-    if(frequency >= 1745 && frequency <= 1785){
-      Serial.println("A6");
-      n1 = true;
-      }
-    if(frequency >= 1646 && frequency <= 1676){
-      Serial.println("G#6");
-      if (n1 == true){
-        n2 = true;
-      }
-      }
-    if(frequency >= 1465 && frequency <= 1495){
-      Serial.println("F#6");
-      if (n2 == true){
-        n3 = true;
-      }
+    if (frequency > 1000){
+      Serial.print("HANN (Alone): ");
+      Serial.print(n1);
+      Serial.print(" ");
+      Serial.print(n2);
+      Serial.print(" ");
+      Serial.print(n3);
+      Serial.print(" ");
+      Serial.print(n4);
+      Serial.print(" ");
+      Serial.print(n5);
+      Serial.print(" ");
+      Serial.print(n6);
+      Serial.print(" ");
+      Serial.print(n7);
+      Serial.print(" ");
+      Serial.print(frequency);
+      Serial.println(" hz");
+      if(frequency >= 1745 && frequency <= 1785){
+        Serial.println("A6");
+        n1 = true;
+        }
+      if(frequency >= 1646 && frequency <= 1676){
+        Serial.println("G#6");
+        if (n1 == true){
+          n2 = true;
+        }
+        }
+      if(frequency >= 1465 && frequency <= 1495){
+        Serial.println("F#6");
+        if (n2 == true){
+          n3 = true;
+        }
         if (n4 == true){
           n5 = true;
         }
-      }
-    if(frequency >= 1302 && frequency <= 1334){
-      Serial.println("E6");
-      if (n3 == true){
-        n4 = true;
-      }
-      }
-    if(frequency >= 2201 && frequency <= 2265){
-      Serial.println("C#7");
-      if (n6 == true){
-        n7 = true;
         }
-      if (n5 == true){
-        n6 = true;
-      }
-      }
+      if(frequency >= 1302 && frequency <= 1334){
+        Serial.println("E6");
+        if (n3 == true){
+          n4 = true;
+        }
+        }
+      if(frequency >= 2201 && frequency <= 2265){
+        Serial.println("C#7");
+        if (n6 == true){
+          n7 = true;
+          }
+        if (n5 == true){
+          n6 = true;
+        }
+        }
     }
   delay(1000);  //delete this if you want
   if (n7 == true){
-    HANN.write(160);
+    HANN.write(180);
   }
-}
+  if (frequency >=  870 && frequency <= 890){
+    // reset HANN(Alone)
+    n1 = false;
+    n2 = false;
+    n3 = false;
+    n4 = false;
+    n5 = false;
+    n6 = false;
+    n7 = false;
+    Serial.println("Closing Box");
+    HANN.write(105);
+    frequency = 0;
+  }
+  }
