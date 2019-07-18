@@ -54,14 +54,6 @@ bool n5 = false;
 bool n6 = false;
 bool n7 = false;
 
-//Note Check- WangXian
-bool n11 = false;
-bool n12 = false;
-bool n13 = false;
-bool n14 = false;
-bool n15 = false;
-bool n16 = false;
-
 void setup() {
 
   Serial.begin(9600);
@@ -72,7 +64,7 @@ void setup() {
   pinMode(12, OUTPUT); //output pin
 
   HANN.attach(servoPin);
-  HANN.write(105 );
+  HANN.write(105);
 
   cli();//diable interrupts
 
