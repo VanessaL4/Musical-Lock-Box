@@ -72,7 +72,7 @@ void setup() {
   pinMode(12, OUTPUT); //output pin
 
   HANN.attach(servoPin);
-  HANN.write(45);
+  HANN.write(105 );
 
   cli();//diable interrupts
 
@@ -288,10 +288,10 @@ void loop() {
   }
   delay(1000);  //delete this if you want
   if (n7 == true){
-    HANN.write(160);
+    HANN.write(180);
   }
   if (n16 == true){
-    HANN.write(160);
+    HANN.write(180);
   }
   if (frequency >=  870 && frequency <= 890){
     // reset HANN(Alone)
@@ -310,7 +310,7 @@ void loop() {
     n15 = false;
     n16 = false;
     Serial.println("Closing Box");
-    HANN.write(45);
+    HANN.write(105);
     frequency = 0;
   }
   }
