@@ -235,7 +235,7 @@ void loop() {
   if (n7 == true){
     HANN.write(180);
   }
-  if (frequency >=  870 && frequency <= 890){
+  if (frequency >=  850 && frequency <= 900){
     // reset HANN(Alone)
     n1 = false;
     n2 = false;
