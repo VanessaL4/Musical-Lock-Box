@@ -216,35 +216,42 @@ void loop() {
       if(frequency >= 1745 && frequency <= 1785){
         Serial.println("A6");
         n1 = true;
+        digitalWrite(11, HIGH); // Red (1)
         }
       if(frequency >= 1646 && frequency <= 1676){
         Serial.println("G#6");
         if (n1 == true){
           n2 = true;
+          digitalWrite(10, HIGH); // BLue (2)
         }
         }
       if(frequency >= 1465 && frequency <= 1495){
         Serial.println("F#6");
         if (n2 == true){
           n3 = true;
+          digitalWrite(9, HIGH); //Red (3)
         }
         if (n4 == true){
           n5 = true;
+          digitalWrite(6, HIGH); //Red (5)
         }
         }
       if(frequency >= 1302 && frequency <= 1334){
         Serial.println("E6");
         if (n3 == true){
           n4 = true;
+          digitalWrite(7, HIGH); //Green (4)
         }
         }
       if(frequency >= 2201 && frequency <= 2265){
         Serial.println("C#7");
         if (n6 == true){
           n7 = true;
+          digitalWrite(2, HIGH); //Pink (7)
           }
         if (n5 == true){
           n6 = true;
+          digitalWrite(3, HIGH); //White (6)
         }
         }
     }
@@ -268,29 +275,35 @@ void loop() {
       if (frequency >= 276 && frequency <= 310){
         Serial.println("D4");
         n11 = true;
+        digitalWrite(11, HIGH); //Red (1)
       }
       if (frequency >= 312 && frequency <= 346){
         Serial.println("E4");
         if (n11 == true){
           n12 = true;
+          digitalWrite(10, HIGH); //Blue (2)
         }
         if (n14 == true){
           n15 = true;
+          digitalWrite(6. HIGH); //Red (5)
         }
       }
       if (frequency >=477 && frequency <= 511){
         Serial.println("B4");
         if (n12 == true) {
           n13 = true;
+          digitalWrite(9, HIGH); //Red (3)
         }
       }
       if (frequency >=423 && frequency <= 457){
         Serial.println("A4");
         if (n13 == true){
           n14 = true;
+          digitalWrite(7, HIGH); //Green (4)
         }
         if (n15 == true){
           n16 = true;
+          digitalWrite(3, HIGH); //White (6)
         }
       }
     }
@@ -298,9 +311,27 @@ void loop() {
   delay(1000);  //delete this if you want
   if (n7 == true){
     HANN.write(180);
+    // Wait 10 seconds after the notes have been registered to turn LEDs off
+    delay(10000);
+    digitalWrite(11, LOW); // Red (MDZS)
+    digitalWrite(10, LOW); // Blue (MDZS)
+    digitalWrite(9, LOW); // Red (SVSSS)
+    digitalWrite(7, LOW); // Green (SVSSS)
+    digitalWrite(6, LOW); // Red (TGCf)
+    digitalWrite(3, LOW); // White (TGCF)
+    digitalWrite(2, LOW); // Pink (<3)
   }
   if (n16 == true){
     HANN.write(180);
+    // Wait 10 seconds after the notes have been registered to turn LEDs off
+    delay(10000);
+    digitalWrite(11, LOW); // Red (MDZS)
+    digitalWrite(10, LOW); // Blue (MDZS)
+    digitalWrite(9, LOW); // Red (SVSSS)
+    digitalWrite(7, LOW); // Green (SVSSS)
+    digitalWrite(6, LOW); // Red (TGCf)
+    digitalWrite(3, LOW); // White (TGCF)
+    digitalWrite(2, LOW); // Pink (<3)
   }
   if (frequency >=  850 && frequency <= 900){
     // reset HANN(Alone)
@@ -321,5 +352,13 @@ void loop() {
     Serial.println("Closing Box");
     HANN.write(105);
     frequency = 0;
+    //Turn ALL LEDs off
+    digitalWrite(11, LOW); // Red (MDZS)
+    digitalWrite(10, LOW); // Blue (MDZS)
+    digitalWrite(9, LOW); // Red (SVSSS)
+    digitalWrite(7, LOW); // Green (SVSSS)
+    digitalWrite(6, LOW); // Red (TGCf)
+    digitalWrite(3, LOW); // White (TGCF)
+    digitalWrite(2, LOW); // Pink (<3)
   }
   }
