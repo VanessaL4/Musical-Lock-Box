@@ -76,6 +76,9 @@ void setup() {
   digitalWrite(6, LOW) // Red (TGCf)
   digitalWrite(3, LOW); // White (TGCF)
   digitalWrite(2, LOW); // Pink (<3)
+  
+  digitalWrite(5, LOW); //Red (Bottom)
+  digitalWrite(4, LOW); //Blue (Bottom)
 
   pinMode(13, OUTPUT); //led indicator pin
   pinMode(12, OUTPUT); //output pin
@@ -217,6 +220,10 @@ void loop() {
         Serial.println("A6");
         n1 = true;
         digitalWrite(11, HIGH); // Red (1)
+        digitalWrite(4, HIGH); // Blue (Bottom)
+        if (digitalWrite(4, HIGH) == true){
+          digitalWrite(5, LOW);
+          }
         }
       if(frequency >= 1646 && frequency <= 1676){
         Serial.println("G#6");
@@ -276,6 +283,10 @@ void loop() {
         Serial.println("D4");
         n11 = true;
         digitalWrite(11, HIGH); //Red (1)
+        digitalWrite(5, HIGH); // Red (Bottom)
+        if (digitalWrite(5, HIGH) == true){
+          digitalWrite(4, LOW);
+          }
       }
       if (frequency >= 312 && frequency <= 346){
         Serial.println("E4");
