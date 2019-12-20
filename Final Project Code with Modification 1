@@ -1,3 +1,9 @@
+//Musical Lock Box Project Code w/ Modification 1
+// https://bluestampengineering.com/student-projects/vanessa-l/
+// Includes all Milestone code and Modification Code
+// Modification 1: Programming for a second melody that can be used to unlock the Box
+// July 26, 2019
+
 //generalized wave freq detection with 38.5kHz sampling rate and interrupts
 //by Amanda Ghassaei
 //https://www.instructables.com/id/Arduino-Frequency-Detection/
