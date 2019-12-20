@@ -3,7 +3,6 @@
 // Includes all Milestone code and Modification Code
 // Modification 1: 2 Programming a Second Set of Melody that can be used to Unlock the Box
 // Modification 2: The Addition of LEDs
-// Modification 3: Installation of a DFPlayer that can be used as a MP3 Player.
 // July 26, 2019
 
 //generalized wave freq detection with 38.5kHz sampling rate and interrupts
@@ -15,8 +14,7 @@
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation; either version 3 of the License, or
-   (at your option) any later version.
-*/
+digitalread*/
 
 
 //clipping indicator variables 
@@ -372,12 +370,12 @@ void loop() {
     HANN.write(105);
     frequency = 0;
     //Turn ALL LEDs off
-    digitalWrite(11, LOW); // Red (MDZS)
-    digitalWrite(10, LOW); // Blue (MDZS)
-    digitalWrite(9, LOW); // Red (SVSSS)
-    digitalWrite(7, LOW); // Green (SVSSS)
-    digitalWrite(6, LOW); // Red (TGCf)
-    digitalWrite(3, LOW); // White (TGCF)
-    digitalWrite(2, LOW); // Pink (<3)
+    digitalWrite(11, LOW); // Red (1)
+    digitalWrite(10, LOW); // Blue (2)
+    digitalWrite(9, LOW); // Red (3)
+    digitalWrite(7, LOW); // Green (4)
+    digitalWrite(6, LOW); // Red (5)
+    digitalWrite(3, LOW); // White (6)
+    digitalWrite(2, LOW); // Pink (7)
   }
   }
