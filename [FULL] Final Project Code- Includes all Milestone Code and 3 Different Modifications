@@ -1,8 +1,8 @@
 //[FULL] Musical Lock Box Project Code
 // https://bluestampengineering.com/student-projects/vanessa-l/
 // Includes all Milestone code and Modification Code
-// Modification 1: 2 Programming a Second Set of Melody that can be used to Unlock the Box
-// Modification 2: The Addition of LEDs
+// Modification 1: Programming for a second melody that can be used to unlock the box
+// Modification 2: Programming for the additions of LEDs to indicate that a note has been heard
 // July 26, 2019
 
 //generalized wave freq detection with 38.5kHz sampling rate and interrupts
